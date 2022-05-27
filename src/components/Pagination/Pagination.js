@@ -1,24 +1,16 @@
+import { useContext } from 'react';
+import AppContext from '../../context/AppContext';
 import "./Pagination.scss";
 
-const Pagination = (props) => {
-    const { pageNumber, setPageNumber } = props;
+const Pagination = () => {
+    const { prevPage, nextPage } = useContext(AppContext);
 
-    const prev = () => {
-        if(pageNumber >= 1){
-        setPageNumber(page => page - 1);
-        }
-    };
-    
-    const next = () => {
-        if(pageNumber <= 42){
-        setPageNumber(page => page + 1);
-        }
-    };
+    const handle = () => nextPage();
 
     return(
        <div className="pagination">
-            <button onClick={prev}>prev</button>
-            <button onClick={next}>next</button>
+            <button onClick={prevPage}>prev</button>
+            <button onClick={handle}>next</button>
        </div> 
     );
 }

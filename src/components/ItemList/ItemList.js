@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import "./ItemList.scss";
+import AppContext from '../../context/AppContext';
 import eye from "../../assets/eye.png";
 
-const ItemList = (props) => {
-    const { characters, setCharacters, pageNumber } = props;
-    let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`
+const ItemList = () => {
+    const { search, pageNumber, characters, setCharacters } = useContext(AppContext);
+    
+    let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`
 
     useEffect(()=> {
         fetch(api)
@@ -13,26 +15,31 @@ const ItemList = (props) => {
     }, [api]);
 
     return(
-        <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Status</th>
-                    <th>Specie</th>
-                    <th>Gender</th>
-                    <th>Episodes</th>
-                    <th>Detail</th>
-                </tr>
-                {characters.map(character => (
-                    <tr>
-                        <td>{character.name}</td>
-                        <td>{character.status}</td>
-                        <td>{character.species}</td>
-                        <td>{character.gender}</td>
-                        <td>link</td>
-                        <td className="table-icon-container"><img src={eye} alt="eye icon to see details"/></td>
-                    </tr>
-                ))}
-        </table>
+        <>
+            {characters ? 
+                (<table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>Specie</th>
+                            <th>Gender</th>
+                            <th>Episodes</th>
+                            <th>Detail</th>
+                        </tr>
+                        {characters.map(character => (
+                            <tr key={character.id}>
+                                <td>{character.name}</td>
+                                <td>{character.status}</td>
+                                <td>{character.species}</td>
+                                <td>{character.gender}</td>
+                                <td>link</td>
+                                <td className="table-icon-container"><img src={eye} alt="eye icon to see details"/></td>
+                            </tr>
+                        ))}
+                </table>)
+                :
+                (<p className="empty-table">No characters were found</p>)}
+            </>
     );
 }
 
