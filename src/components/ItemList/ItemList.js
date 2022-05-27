@@ -2,10 +2,8 @@ import { useState, useEffect } from 'react';
 import "./ItemList.scss";
 import eye from "../../assets/eye.png";
 
-const ItemList = () => {
-    const [characters, setCharacters] = useState([]);
-    const [pageNumber, setPageNumber] = useState(1);
-
+const ItemList = (props) => {
+    const { characters, setCharacters, pageNumber } = props;
     let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`
 
     useEffect(()=> {
