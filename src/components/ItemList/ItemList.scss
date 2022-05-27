@@ -1,1 +1,36 @@
 @import "../../styles/theme";
+
+
+table{
+    background-color: $backgroundTable;
+    border-radius: 8px;
+    width: 80%;
+    padding: 40px;
+    border-spacing: 0;
+    tr{
+        th{
+            font-size: 20px;
+            font-weight: 400;
+            color: $text;
+            text-align: start;
+            border-bottom:1px solid white;
+            padding: 5px 0px 5px 7px;
+        }
+        td{
+            font-family: 'Roboto';
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 20px;
+            color: $secondaryText;
+            padding: 5px 0px 5px 7px;
+        }
+        .table-icon-container{
+            text-align: right;
+            padding-right: 15px;
+        }
+    }
+    tr:nth-child(even){
+        background-color: $secondaryBackgroundTable;
+    }
+}
+

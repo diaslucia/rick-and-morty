@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import "./ItemList.scss";
+import eye from "../../assets/eye.png";
 
 const ItemList = () => {
     const [characters, setCharacters] = useState([]);
@@ -14,8 +15,7 @@ const ItemList = () => {
     }, [api]);
 
     return(
-        <table className="table">
-            <thead>
+        <table>
                 <tr>
                     <th>Name</th>
                     <th>Status</th>
@@ -24,19 +24,16 @@ const ItemList = () => {
                     <th>Episodes</th>
                     <th>Detail</th>
                 </tr>
-            </thead>
-            <tbody>
                 {characters.map(character => (
                     <tr>
                         <td>{character.name}</td>
                         <td>{character.status}</td>
-                        <td>{character.specie}</td>
+                        <td>{character.species}</td>
                         <td>{character.gender}</td>
                         <td>link</td>
-                        <td>link</td>
+                        <td className="table-icon-container"><img src={eye} alt="eye icon to see details"/></td>
                     </tr>
                 ))}
-            </tbody>
         </table>
     );
 }
