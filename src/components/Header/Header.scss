@@ -1,0 +1,18 @@
+@import "../../styles/theme";
+
+header {
+    .header-title{
+        color: $text;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 20px;
+        text-align: center;
+    }
+    .header-logo{
+        position: absolute;
+        left: -2px;
+        top: 0px;
+        width: 102px;
+        height: 100px;
+    }
+}

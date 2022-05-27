@@ -1,0 +1,26 @@
+@import "../../styles/theme";
+
+.searchbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    .searchbar-icon{
+        width: 33px;
+        height: 33px; 
+        margin: 0px 10px;
+    }
+    .searchbar-input{
+        font-family: inherit;
+        font-size: 28px;
+        width: 447px;
+        border: 0;
+        border-bottom: 2px solid $details;
+        outline: 0;
+        color: $details;
+        background: transparent;
+    }
+    .searchbar-input::placeholder {
+        color: $details;
+    }
+}
