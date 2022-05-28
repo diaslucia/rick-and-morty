@@ -14,12 +14,27 @@ export const DataProvider = ({ children }) => {
         setPageNumber(1);
     }
 
+    const handleCharacters = (items) => {
+        items.sort((a, b) => {
+            let firsta = a.name.toLowerCase();
+            let firstb = b.name.toLowerCase();
+            if (firsta < firstb) {
+                return -1;
+            }
+            if (firsta > firstb) {
+                return 1;
+            }
+            return 0;
+        });
+    }
+   
     return(
         <AppContext.Provider value={{
                                         pageNumber,
                                         setPageNumber,
                                         characters,
                                         setCharacters,
+                                        handleCharacters,
                                         handleSearch,
                                         search,
                                         info,

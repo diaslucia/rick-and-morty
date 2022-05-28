@@ -4,7 +4,7 @@ table{
     background-color: $backgroundTable;
     border-radius: 8px;
     width: 80%;
-    padding: 40px;
+    padding: 20px 40px;
     border-spacing: 0;
     tr{
         th{
@@ -28,10 +28,11 @@ table{
             padding-right: 15px;
         }
     }
-    tr:nth-child(even){
+    tbody tr:nth-child(odd){
         background-color: $secondaryBackgroundTable;
     }
 }
+
 .empty-table{
     text-align: center;
     font-size: 20px;
