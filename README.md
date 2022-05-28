@@ -54,3 +54,9 @@ $npm install node-sass --save
 ```
 $npm install react-paginate --save
 ```
+### React Paginate
+
+1. [React Router](https://reactrouter.com/docs/en/v6/getting-started/installation)
+```
+$npm install react-router-dom@6
+```

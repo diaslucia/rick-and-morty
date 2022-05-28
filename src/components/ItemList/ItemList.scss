@@ -15,6 +15,9 @@ table{
             border-bottom:1px solid white;
             padding: 5px 0px 5px 7px;
         }
+        .table-column{
+            cursor: pointer;
+        }
         td{
             font-family: 'Roboto';
             font-weight: 300;
@@ -26,6 +29,14 @@ table{
         .table-icon-container{
             text-align: right;
             padding-right: 15px;
+            img{
+                cursor: pointer;
+                transition: all 0.5s;
+                &:hover{
+                    opacity: 0.5;
+                    transform: scale(1.05);
+                }
+            }
         }
     }
     tbody tr:nth-child(odd){

@@ -1,12 +1,11 @@
 import { useEffect, useContext } from 'react';
+import { Link } from "react-router-dom"
 import "./ItemList.scss";
 import AppContext from '../../context/AppContext';
 import eye from "../../assets/eye.png";
 
 const ItemList = () => {
-    const { search, pageNumber, characters, setCharacters, setInfo, handleCharacters } = useContext(AppContext);
-    
-    let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`
+    const { api , characters, setCharacters, setInfo, renderItemDetail } = useContext(AppContext);
 
     useEffect(()=> {
         fetch(api)
@@ -17,8 +16,6 @@ const ItemList = () => {
         })
     }, [api]);
 
-    handleCharacters(characters);
-
     return(
         <>
             {characters ? 
@@ -27,7 +24,7 @@ const ItemList = () => {
                         <tr>
                             <th>Name</th>
                             <th>Status</th>
-                            <th>Specie</th>
+                            <th className="table-column" onClick={() => null}>Specie</th>
                             <th>Gender</th>
                             <th>Episodes</th>
                             <th>Detail</th>
@@ -41,7 +38,11 @@ const ItemList = () => {
                                 <td>{character.species}</td>
                                 <td>{character.gender}</td>
                                 <td>link</td>
-                                <td className="table-icon-container"><img src={eye} alt="eye icon to see details"/></td>
+                                <td className="table-icon-container">
+                                    <Link to="/detail">
+                                        <img onClick={() => renderItemDetail(character.id)} src={eye} alt="eye icon to see details"/>
+                                    </Link>
+                                </td>
                             </tr>
                         ))}
                     </tbody>
