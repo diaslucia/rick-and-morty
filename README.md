@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Rick and Morty Challenge 👴👦
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Description...
 
-## Available Scripts
+## Website Deploy 🏁
 
-In the project directory, you can run:
+https://diaslucia.github.io/rick-and-morty/
 
-### `npm start`
+## Tecnologies 🛠️
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Tecnologies used for this project:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [React JS](https://es.reactjs.org/)
 
-### `npm test`
+- [SASS](https://sass-lang.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instalation & Ejecution 🚀
 
-### `npm run build`
+Steps to install and run the project:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Node JS & React App
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Install Node JS from https://nodejs.org/en/
+2. Clone the project
+```
+$git clone https://github.com/diaslucia/rick-and-morty.git
+```
+3. Open the console in your code editor and change the directory to the one in your current project
+```
+$cd yourProjectDirectory
+```
+4. Install the libraries
+```
+$npm install
+```
+5. Ejecute the app (and close it with Ctrl + C)
+```
+$npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Libraries / Frameworks 📚
 
-### `npm run eject`
+### SASS
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. [SASS](https://create-react-app.dev/docs/adding-a-sass-stylesheet/)
+```
+$npm install node-sass --save
+```
+2. I renamed the file "src/App.css" to "src/App.scss" and I made sure that "src/App.js" imports the "src/App.scss" file. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### React Paginate
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. [React Paginate](https://www.npmjs.com/package/react-paginate)
+```
+$npm install react-paginate --save
+```

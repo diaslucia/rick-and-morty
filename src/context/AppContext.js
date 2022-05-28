@@ -6,18 +6,7 @@ export const DataProvider = ({ children }) => {
     const [pageNumber, setPageNumber] = useState(1);
     const [search, setSearch] = useState("");
     const [characters, setCharacters] = useState([]);
-
-    const prevPage = () => {
-        if(pageNumber >= 1){
-            setPageNumber(page => page - 1);
-        }
-    }
-
-    const nextPage = () => {
-        if(pageNumber <= 42){
-            setPageNumber(page => page + 1);
-        }
-    }
+    const [info, setInfo] = useState([]);
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -28,12 +17,13 @@ export const DataProvider = ({ children }) => {
     return(
         <AppContext.Provider value={{
                                         pageNumber,
-                                        prevPage,
-                                        nextPage,
+                                        setPageNumber,
+                                        characters,
+                                        setCharacters,
                                         handleSearch,
                                         search,
-                                        characters,
-                                        setCharacters
+                                        info,
+                                        setInfo
                                     }}>
             { children }
         </AppContext.Provider>

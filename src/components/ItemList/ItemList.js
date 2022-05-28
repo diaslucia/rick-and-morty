@@ -4,14 +4,17 @@ import AppContext from '../../context/AppContext';
 import eye from "../../assets/eye.png";
 
 const ItemList = () => {
-    const { search, pageNumber, characters, setCharacters } = useContext(AppContext);
+    const { search, pageNumber, characters, setCharacters, setInfo } = useContext(AppContext);
     
     let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`
 
     useEffect(()=> {
         fetch(api)
         .then(res => res.json())
-        .then(data => setCharacters(data.results))
+        .then(data => {
+            setCharacters(data.results)
+            setInfo(data.info)
+        })
     }, [api]);
 
     return(

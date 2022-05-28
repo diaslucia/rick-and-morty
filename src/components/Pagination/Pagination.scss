@@ -1,6 +1,27 @@
 @import "../../styles/theme";
 
 .pagination{
-    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 18px;
+    color: $secondaryText;
     width: 80%;
+    li{
+        list-style-type: none;
+        margin: 0 5px;
+        a{
+            cursor: pointer;
+        }
+    }
+    .active {
+        border: 1px solid $details;
+        border-radius: 100%;;
+        text-align: center;
+        width: 22px;
+        height: 22px;
+    }
 }
+
+
