@@ -10,6 +10,8 @@ export const DataProvider = ({ children }) => {
     const [species, setSpecies] = useState([]);
     const [toggle, setToggle] = useState(false);
 
+    console.log(pageNumber);
+
     let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`
 
     /* This function sorts characters ascending */
@@ -27,7 +29,7 @@ export const DataProvider = ({ children }) => {
         });
     }
 
-    /* This function gets the input texts and saves it */
+    /* This function gets the input text and saves it */
     const handleSearch = (e) => {
         e.preventDefault();
         setSearch(e.target.value);
@@ -39,11 +41,17 @@ export const DataProvider = ({ children }) => {
         let singleCharacter = characters.filter(item => item.id === id);
         setItemDetail(singleCharacter);
     }
+    
+    /* This toggle gets characters ordered by specie */
+    const handleToggle = () => {
+        handleSpecies(characters);
+        setToggle(!toggle);
+    }
 
-    /* This function sorts characters by specie and save it in a variable */
+    /* This function sorts characters by specie */
     const handleSpecies = (items) => {
-        const newList = items;
-        newList.sort((a, b) => {
+        let newItem = items;
+        newItem.sort((a, b) => {
             let firsta = a.species.toLowerCase();
             let firstb = b.species.toLowerCase();
             if (firsta < firstb) {
@@ -54,12 +62,16 @@ export const DataProvider = ({ children }) => {
             }
             return 0;
         });
-        setSpecies(newList);
+        setSpecies(newItem);
     }
 
-    const handleToggle = () => {
-        handleSpecies(characters);
-        setToggle(!toggle);
+    /* If toggle false, we want the characters ordered by name */
+    if (toggle === false) handleCharacters(characters);
+
+    /* This functions set the page number and resets the toggle */
+    const handlePageNumber = (data) => {
+        setPageNumber(data + 1);
+        setToggle(false);
     }
 
     return(
@@ -78,6 +90,7 @@ export const DataProvider = ({ children }) => {
                                         toggle,
                                         setToggle,
                                         handleToggle,
+                                        handlePageNumber,
                                     }}>
             { children }
         </AppContext.Provider>

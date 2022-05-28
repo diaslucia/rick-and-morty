@@ -5,7 +5,7 @@ import Item from "../Item/Item";
 
 
 const ItemList = () => {
-    const { api, characters, setCharacters, handleCharacters, toggle, handleToggle, species } = useContext(AppContext);
+    const { api, characters, setCharacters, toggle, handleToggle, species } = useContext(AppContext);
     
     useEffect(()=> {
         fetch(api)
@@ -15,8 +15,6 @@ const ItemList = () => {
         })
     }, [api, toggle]);
 
-    handleCharacters(characters);
-
     return(
         <>
             {characters ? 
@@ -25,7 +23,7 @@ const ItemList = () => {
                         <tr>
                             <th>Name</th>
                             <th>Status</th>
-                            <th className="table-column" onClick={() => handleToggle()}>Specie ▾</th>
+                            <th className="table-column" onClick={handleToggle}>Specie ▾</th>
                             <th>Gender</th>
                             <th>Episodes</th>
                             <th>Detail</th>

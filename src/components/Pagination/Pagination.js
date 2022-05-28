@@ -4,7 +4,7 @@ import "./Pagination.scss";
 import AppContext from '../../context/AppContext';
 
 const Pagination = () => {
-    const { setPageNumber } = useContext(AppContext);
+    const { handlePageNumber } = useContext(AppContext);
 
     return(
         <ReactPaginate
@@ -17,7 +17,7 @@ const Pagination = () => {
         breakLabel=""
         pageRangeDisplayed={4}
         marginPagesDisplayed={0}
-        onPageChange={data => setPageNumber(data.selected + 1)}
+        onPageChange={data => handlePageNumber(data.selected + 1)}
         />
     );
 }
