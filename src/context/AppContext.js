@@ -7,7 +7,6 @@ export const DataProvider = ({ children }) => {
     const [search, setSearch] = useState("");
     const [characters, setCharacters] = useState([]);
     const [itemDetail, setItemDetail] = useState([]);
-    const [info, setInfo] = useState([]);
 
     let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`
 
@@ -19,7 +18,7 @@ export const DataProvider = ({ children }) => {
 
     const renderItemDetail = (id) => {
         let singleCharacter = characters.filter(item => item.id === id);
-        setItemDetail(singleCharacter[0]);
+        setItemDetail(singleCharacter);
     }
 
     const handleCharacters = (items) => {
@@ -49,8 +48,6 @@ export const DataProvider = ({ children }) => {
                                         itemDetail,
                                         handleSearch,
                                         search,
-                                        info,
-                                        setInfo
                                     }}>
             { children }
         </AppContext.Provider>

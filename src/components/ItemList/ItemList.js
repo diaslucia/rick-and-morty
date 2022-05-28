@@ -5,14 +5,13 @@ import AppContext from '../../context/AppContext';
 import eye from "../../assets/eye.png";
 
 const ItemList = () => {
-    const { api , characters, setCharacters, setInfo, renderItemDetail } = useContext(AppContext);
+    const { api , characters, setCharacters, renderItemDetail } = useContext(AppContext);
 
     useEffect(()=> {
         fetch(api)
         .then(res => res.json())
         .then(data => {
             setCharacters(data.results)
-            setInfo(data.info)
         })
     }, [api]);
 

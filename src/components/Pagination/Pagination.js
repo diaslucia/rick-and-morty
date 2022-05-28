@@ -4,14 +4,14 @@ import AppContext from '../../context/AppContext';
 import "./Pagination.scss";
 
 const Pagination = () => {
-    const { setPageNumber, info } = useContext(AppContext);
+    const { setPageNumber } = useContext(AppContext);
 
     return(
         <ReactPaginate
         className="pagination"
         activeLinkClassName="active-link"
         activeClassName="active"
-        pageCount={info?.pages}
+        pageCount={42}
         nextLabel=">>"
         previousLabel="<<"
         breakLabel=""

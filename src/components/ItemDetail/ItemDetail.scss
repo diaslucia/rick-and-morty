@@ -1,1 +1,52 @@
 @import "../../styles/theme";
+
+.itemDetail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0px;
+    .itemDetail-img{
+        width: 170px;
+        height: 170px;
+        border-radius: 100%;;
+    }
+    .itemDetail-container{
+        width: 400px;
+        .itemTitle{
+            font-family: "Roboto";
+            font-weight: 400;
+            font-size: 20px;
+            color: $secondaryText;
+            margin: 0px;
+        }
+        .itemText{
+            font-family: "Roboto";
+            font-weight: 400;
+            font-size: 18px;
+            color: $detailText;
+            background-color: $detailBackground;
+            border-radius: 8px;
+            padding: 12px 20px;
+            margin: 5px 0px 15px 0px;
+            text-align: left;
+        }
+    }
+    .link-close{
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: 20px;
+        text-align: center; 
+        color: $secondaryText;
+        text-decoration: none;
+        border: 1px solid $details;
+        padding: 8px 20px;
+        border-radius: 8px;
+        margin-top: 20px;
+        transition: all 0.5s;
+        &:hover{
+            color: $text;
+            transform: scale(1.04);
+        }
+    }
+}

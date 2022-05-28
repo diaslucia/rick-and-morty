@@ -1,8 +1,9 @@
+import "./ItemScreen.scss";
 import ItemDetail from "../components/ItemDetail/ItemDetail";
 
 const ItemScreen = () => {
     return(
-        <div>
+        <div className="itemScreen">
             <ItemDetail/>
         </div>
     )
