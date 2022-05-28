@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import ReactPaginate from 'react-paginate';
-import AppContext from '../../context/AppContext';
 import "./Pagination.scss";
+import AppContext from '../../context/AppContext';
 
 const Pagination = () => {
     const { setPageNumber } = useContext(AppContext);

@@ -1,9 +1,7 @@
-import './App.scss';
-import { DataProvider } from './context/AppContext';
 import { Routes, Route } from "react-router-dom";
+import { DataProvider } from './context/AppContext';
 import HomeScreen from './screens/HomeScreen';
 import ItemScreen from './screens/ItemScreen';
-import Header from './components/Header/Header';
 
 function App() {
   return (
