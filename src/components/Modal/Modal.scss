@@ -1,0 +1,25 @@
+@import "../../styles/theme";
+
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background-color: $background;
+    border-radius: 8px;
+    border: 1px solid $details;
+    .modal-x{
+        display:inline-block;
+        font-size: 20px;
+        color: $secondaryText;
+        margin: 20px;
+        cursor: pointer;
+        border-radius: 100%;
+        border: 1px solid $details;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+    }
+}

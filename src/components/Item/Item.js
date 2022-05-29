@@ -5,7 +5,7 @@ import AppContext from '../../context/AppContext';
 import eye from "../../assets/eye.png";
 
 const Item = ({character}) => {
-    const { renderItemDetail} = useContext(AppContext);
+    const { renderItemDetail, handleModal } = useContext(AppContext);
 
     return(
         <tr key={character.id}>
@@ -13,7 +13,9 @@ const Item = ({character}) => {
             <td>{character.status}</td>
             <td>{character.species}</td>
             <td>{character.gender}</td>
-            <td>link</td>
+            <td>
+                <p className="table-episodes" onClick={() => handleModal(character.id)}>Ver</p>
+            </td>
             <td className="table-icon-container">
                 <Link to="/detail">
                     <img onClick={() => renderItemDetail(character.id)} src={eye} alt="eye icon to see details"/>

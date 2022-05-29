@@ -9,6 +9,11 @@ tr{
         color: $secondaryText;
         padding: 6px 0px 6px 7px;
         width: 20%;
+        .table-episodes{
+            text-decoration: underline;
+            margin: 0px;
+            cursor: pointer;
+        }
     }
     .table-name-row{
         width: 30%;

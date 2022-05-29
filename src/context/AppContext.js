@@ -9,8 +9,7 @@ export const DataProvider = ({ children }) => {
     const [itemDetail, setItemDetail] = useState([]);
     const [species, setSpecies] = useState([]);
     const [toggle, setToggle] = useState(false);
-
-    console.log(pageNumber);
+    const [modal, setModal] = useState(false);
 
     let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`
 
@@ -40,6 +39,13 @@ export const DataProvider = ({ children }) => {
     const renderItemDetail = (id) => {
         let singleCharacter = characters.filter(item => item.id === id);
         setItemDetail(singleCharacter);
+    }
+
+    /* This function opens the modal and finds the item you selected */
+    const handleModal = (id) => {
+        let episodeCharacter = characters.filter(item => item.id === id);
+        setItemDetail(episodeCharacter);
+        setModal(true)
     }
     
     /* This toggle gets characters ordered by specie */
@@ -91,6 +97,9 @@ export const DataProvider = ({ children }) => {
                                         setToggle,
                                         handleToggle,
                                         handlePageNumber,
+                                        setModal,
+                                        modal,
+                                        handleModal,
                                     }}>
             { children }
         </AppContext.Provider>

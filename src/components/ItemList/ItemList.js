@@ -2,10 +2,10 @@ import { useEffect, useContext } from 'react';
 import "./ItemList.scss";
 import AppContext from '../../context/AppContext';
 import Item from "../Item/Item";
-
+import Modal from "../Modal/Modal";
 
 const ItemList = () => {
-    const { api, characters, setCharacters, toggle, handleToggle, species } = useContext(AppContext);
+    const { api, characters, setCharacters, toggle, handleToggle, species, modal } = useContext(AppContext);
     
     useEffect(()=> {
         fetch(api)
@@ -39,8 +39,10 @@ const ItemList = () => {
                     </tbody>
                 </table>)
                 :
-                (<p className="empty-table">No characters were found</p>)}
-            </>
+                (<p className="empty-table">No characters were found</p>)
+            }
+            {modal ? <Modal/> : null}
+        </>
     );
 }
 
