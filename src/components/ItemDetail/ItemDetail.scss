@@ -50,3 +50,26 @@
         }
     }
 }
+
+@media only screen and (min-width: 200px) and (max-width: 600px) {
+    .itemDetail{
+        .itemDetail-img{
+            width: 120px;
+            height: 120px;
+        }
+        .itemDetail-container{
+            width: 280px;
+            .itemTitle{
+                font-size: 18px;
+            }
+            .itemText{
+                font-size: 17px;
+                padding: 10px 12px;
+                margin: 5px 0px 10px 0px;
+            }
+        }
+        .link-close{
+            font-size: 18px;
+        }
+    }
+}

@@ -1,0 +1,50 @@
+@import "../styles/theme";
+
+.error{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    .error-title{
+        font-size: 150px;
+        font-weight: bold;
+        color: $details;
+        margin-bottom: 10px;
+    }
+    .error-text{
+        font-size: 20px;
+        color: $details;
+    }
+    .error-button{
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: 20px;
+        text-align: center; 
+        color: $secondaryText;
+        text-decoration: none;
+        border: 1px solid $details;
+        padding: 8px 20px;
+        border-radius: 8px;
+        margin-top: 20px;
+        transition: all 0.5s;
+        &:hover{
+            color: $text;
+            transform: scale(1.04);
+        }
+    }
+}
+
+@media only screen and (min-width: 200px) and (max-width: 600px) {
+    .error{
+        .error-title{
+            font-size: 60px;
+        }
+        .error-text{
+            font-size: 18px;
+        }
+        .error-button{
+            font-size: 18px;
+        }
+    }
+} 

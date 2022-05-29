@@ -10,8 +10,9 @@ export const DataProvider = ({ children }) => {
     const [species, setSpecies] = useState([]);
     const [toggle, setToggle] = useState(false);
     const [modal, setModal] = useState(false);
+    const [episodes, setEpisodes] = useState([]);
 
-    let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`
+    let api = `${process.env.REACT_APP_API_KEY}character/?page=${pageNumber}&name=${search}`
 
     /* This function sorts characters ascending */
     const handleCharacters = (items) => {
@@ -46,6 +47,7 @@ export const DataProvider = ({ children }) => {
         let episodeCharacter = characters.filter(item => item.id === id);
         setItemDetail(episodeCharacter);
         setModal(true)
+        setEpisodes(episodeCharacter[0].episode);
     }
     
     /* This toggle gets characters ordered by specie */
@@ -100,6 +102,7 @@ export const DataProvider = ({ children }) => {
                                         setModal,
                                         modal,
                                         handleModal,
+                                        episodes,
                                     }}>
             { children }
         </AppContext.Provider>

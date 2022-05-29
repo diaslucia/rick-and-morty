@@ -29,3 +29,23 @@ table{
     color: $text;
     padding: 40px;
 }
+
+@media only screen and (min-width: 200px) and (max-width: 600px) {
+    table {
+      display: block;
+      width: 90%;
+      overflow-x: auto;
+      padding: 10px 20px;
+        tr{
+            th{
+                font-size: 18px;
+                padding: 5px 7px 5px 7px;
+                width: 100%;
+            }
+            .table-column{
+                overflow: hidden;
+            }
+        }
+    }
+    
+}

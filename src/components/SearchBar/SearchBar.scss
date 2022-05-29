@@ -26,3 +26,20 @@
         color: $details;
     }
 }
+
+@media only screen and (min-width: 200px) and (max-width: 600px) {
+    .searchbar{
+        width: 90%;
+        margin-bottom: 20px;
+        .searchbar-icon{
+            width: 20px;
+            height: 20px; 
+            margin: 0px 5px;
+        }
+        .searchbar-input{
+            font-size: 20px;
+            width: 250px;
+            border-bottom: 1px solid $details;
+        }
+    }    
+}
