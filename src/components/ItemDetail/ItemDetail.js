@@ -23,7 +23,7 @@ const ItemDetail = () => {
         <h1 className="itemTitle">Origin</h1>
         <p className="itemText">{itemDetail[0].origin.name}</p>
       </div>
-      <Link to="/" className="link-close">
+      <Link to="/rick-and-morty" className="link-close">
         Close
       </Link>
     </div>

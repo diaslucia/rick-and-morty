@@ -1,6 +1,12 @@
 # Rick and Morty Challenge 👴👦
 
-Description...
+This page displays a list of Rick & Morty characters recovered from a public API. 
+You can see the character's details as well as the list of episodes where they appeared.
+
+The character's name is sorted ascending and you have the option to sort them by specie.
+(This command only sorts the characters per page.)
+
+You can also try the search bar and navigate through the list using pagination!
 
 ## Website Deploy 🏁
 
@@ -59,4 +65,10 @@ $npm install react-paginate --save
 1. [React Router](https://reactrouter.com/docs/en/v6/getting-started/installation)
 ```
 $npm install react-router-dom@6 --save
+```
+### Github Pages
+
+1. [Github Pages](https://platzi.com/tutoriales/1548-react/4065-guia-para-usar-github-pages-en-tus-proyectos-de-reactjs/)
+```
+$npm install --save-dev gh-pages
 ```
